@@ -2,11 +2,15 @@
 
 header {
   background-color: var(--color2);
-  height: 10vh;
+  height: 100px;
   text-align: center;
-  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   h1 {
     margin: 0;
   }
+
 }
