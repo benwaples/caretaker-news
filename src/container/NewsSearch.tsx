@@ -5,6 +5,7 @@ import Search from '../components/search/Search';
 // eslint-disable-next-line import/no-named-as-default
 import getArticles from '../services/guardianApi';
 import { Response } from '../types';
+import './newsSearch.scss';
 
 export default function NewsSearch(): JSX.Element {
   const [query, setQuery] = useState('Sports');
@@ -32,12 +33,14 @@ export default function NewsSearch(): JSX.Element {
   // display current page number
 
   return (
-    <>
-      <Search query={query} handleQuery={handleQuery} />
-      <PageNav setPage={setPage} page={page} totalPages={response?.pages} />
+    <main>
+      <section id="search">
+        <Search query={query} handleQuery={handleQuery} />
+        <PageNav setPage={setPage} page={page} totalPages={response?.pages} />
+      </section>
       {response && !loading && <ArticleList articles={response?.results} />}
       {loading && <h1>Loading...</h1>}
       {error && <h1>{error}</h1>}
-    </>
+    </main>
   );
 }

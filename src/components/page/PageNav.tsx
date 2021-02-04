@@ -10,7 +10,7 @@ export default function PageNav({
   totalPages: number | undefined;
 }): JSX.Element {
   return (
-    <div>
+    <div id="page-nav">
       <button
         type="button"
         disabled={page <= 1}
@@ -18,12 +18,12 @@ export default function PageNav({
       >
         Prev
       </button>
+      <h3>
+        Page: {page}/{totalPages}
+      </h3>
       <button type="button" onClick={() => setPage(page + 1)}>
         Next
       </button>
-      <h3>
-        {page}/{totalPages}
-      </h3>
     </div>
   );
 }

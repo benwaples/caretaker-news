@@ -11,7 +11,7 @@ export default function Search({
   }) => void;
 }): JSX.Element {
   return (
-    <div>
+    <div id="search-bar">
       <label htmlFor="search">
         Search Term
         <input
