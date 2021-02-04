@@ -1,17 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-<<<<<<< HEAD:src/App.tsx
-=======
 import * as dotenv from 'dotenv';
+import './App.css';
+
 import NewsSearch from '../../container/NewsSearch';
->>>>>>> a2cfaf0... update search:src/components/app/App.tsx
+
+import Header from '../header/Header';
 
 dotenv.config();
 
 function App(): JSX.Element {
   return (
     <div className="App">
+      <Header />
       <NewsSearch />
     </div>
   );
