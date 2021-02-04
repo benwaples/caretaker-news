@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import ArticleList from '../components/articles/ArticleList';
 import PageNav from '../components/page/PageNav';
@@ -16,11 +17,14 @@ export default function NewsSearch(): JSX.Element {
     setQuery(e.target.value);
   };
 
+  const searchProps = { query, handleQuery };
+  const pageNavProps = { setPage, page, totalPages: response?.pages };
+
   return (
     <main>
       <section id="search">
-        <Search query={query} handleQuery={handleQuery} />
-        <PageNav setPage={setPage} page={page} totalPages={response?.pages} />
+        <Search {...searchProps} />
+        <PageNav {...pageNavProps} />
       </section>
       {response && !loading && <ArticleList articles={response?.results} />}
       {loading && <h1>Loading...</h1>}
