@@ -1,16 +1,15 @@
 import React from 'react';
+import { Article as ArticleType } from '../../types';
 
 export default function Article({
-  webTitle,
-  webUrl,
+  article,
 }: {
-  webTitle: string;
-  webUrl: string;
+  article: ArticleType;
 }): JSX.Element {
   return (
     <li>
       <h1>
-        <a href={webUrl}>{webTitle}</a>
+        <a href={article.webUrl}>{article.webTitle}</a>
       </h1>
     </li>
   );

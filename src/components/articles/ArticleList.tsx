@@ -11,5 +11,5 @@ export default function ArticleList({
     <Article article={article} />
   ));
 
-  return <div />;
+  return <ul>{articleElements}</ul>;
 }
