@@ -1,16 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+<<<<<<< HEAD:src/App.tsx
+=======
+import * as dotenv from 'dotenv';
+import NewsSearch from '../../container/NewsSearch';
+>>>>>>> a2cfaf0... update search:src/components/app/App.tsx
 
 dotenv.config();
 
 function App(): JSX.Element {
-  console.log(process.env.REACT_APP_GUARDIAN_KEY);
   return (
     <div className="App">
-      <header className="App-header">
-        <h3>Hello World</h3>
-      </header>
+      <NewsSearch />
     </div>
   );
 }
