@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ArticleList from '../components/articles/ArticleList';
+import PageNav from '../components/page/PageNav';
 import Search from '../components/search/Search';
 // eslint-disable-next-line import/no-named-as-default
 import getArticles from '../services/guardianApi';
@@ -31,6 +32,7 @@ export default function NewsSearch(): JSX.Element {
   return (
     <>
       <Search query={query} handleQuery={handleQuery} />
+      <PageNav setPage={setPage} page={page} />
       {response && !loading ? (
         <ArticleList articles={response?.results} />
       ) : (
