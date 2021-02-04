@@ -24,8 +24,6 @@ export default function NewsSearch(): JSX.Element {
     setQuery(e.target.value);
   };
 
-  console.log(response);
-
   return (
     <main>
       <section id="search">
