@@ -27,14 +27,14 @@ export default function NewsSearch(): JSX.Element {
   }, [query, page]);
   console.log(response);
 
-  if (loading) return <h1>Loading...</h1>;
+  // if (loading) return <h1>Loading...</h1>;
   return (
     <>
       <Search query={query} handleQuery={handleQuery} />
-      {response ? (
+      {response && !loading ? (
         <ArticleList articles={response?.results} />
       ) : (
-        <h1>Articles go here</h1>
+        <h1>Loading...</h1>
       )}
     </>
   );
