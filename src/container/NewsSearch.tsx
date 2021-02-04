@@ -6,15 +6,7 @@ import useArticles from '../hooks';
 import './newsSearch.scss';
 
 export default function NewsSearch(): JSX.Element {
-  const {
-    query,
-    page,
-    response,
-    loading,
-    error,
-    setPage,
-    setQuery,
-  } = useArticles();
+  const { query, page, response, loading, setPage, setQuery } = useArticles();
 
   const handleQuery = (e: {
     preventDefault: () => void;
@@ -32,7 +24,6 @@ export default function NewsSearch(): JSX.Element {
       </section>
       {response && !loading && <ArticleList articles={response?.results} />}
       {loading && <h1>Loading...</h1>}
-      {error && <h1>{error}</h1>}
     </main>
   );
 }

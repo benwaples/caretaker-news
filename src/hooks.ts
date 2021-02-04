@@ -8,14 +8,12 @@ const useArticles = (): UseArticleHook => {
   const [page, setPage] = useState(1);
   const [response, setResponse] = useState<Response>();
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string>();
 
   useEffect(() => {
     setLoading(true);
     getArticles(query, page)
       .then((articles) => articles && setResponse(articles))
-      .then(() => setLoading(false))
-      .catch((message: string) => setError(message));
+      .then(() => setLoading(false));
   }, [query, page]);
 
   return {
@@ -23,7 +21,6 @@ const useArticles = (): UseArticleHook => {
     page,
     response,
     loading,
-    error,
     setPage,
     setQuery,
   };

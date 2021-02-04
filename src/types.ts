@@ -32,7 +32,6 @@ export interface UseArticleHook {
   page: number;
   response: Response | undefined;
   loading: boolean;
-  error: string | undefined;
   setPage: Dispatch<SetStateAction<number>>;
   setQuery: Dispatch<SetStateAction<string>>;
 }
