@@ -1,3 +1,5 @@
+@use '../app/App.css';
+
 .article {
-  background-color: pink;
+  background-color: var(--color4);
 }
