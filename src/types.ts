@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from 'react';
+
 export interface Response {
   totalArticles: number;
   pageSize: number;
@@ -23,4 +25,14 @@ export interface Article {
 
 export interface Fields {
   thumbnail: string;
+}
+
+export interface UseArticleHook {
+  query: string;
+  page: number;
+  response: Response | undefined;
+  loading: boolean;
+  error: string | undefined;
+  setPage: Dispatch<SetStateAction<number>>;
+  setQuery: Dispatch<SetStateAction<string>>;
 }

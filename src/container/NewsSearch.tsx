@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ArticleList from '../components/articles/ArticleList';
 import PageNav from '../components/page/PageNav';
 import Search from '../components/search/Search';
-// eslint-disable-next-line import/no-named-as-default
-import getArticles from '../services/guardianApi';
-import { Response } from '../types';
+import useArticles from '../hooks';
 import './newsSearch.scss';
 
 export default function NewsSearch(): JSX.Element {
-  const [query, setQuery] = useState('Sports');
-  const [page, setPage] = useState(1);
-  const [response, setResponse] = useState<Response>();
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string>();
+  const {
+    query,
+    page,
+    response,
+    loading,
+    error,
+    setPage,
+    setQuery,
+  } = useArticles();
 
   const handleQuery = (e: {
     preventDefault: () => void;
@@ -22,15 +24,7 @@ export default function NewsSearch(): JSX.Element {
     setQuery(e.target.value);
   };
 
-  useEffect(() => {
-    setLoading(true);
-    getArticles(query, page)
-      .then((articles) => articles && setResponse(articles))
-      .then(() => setLoading(false))
-      .catch((message: string) => setError(message));
-  }, [query, page]);
   console.log(response);
-  // display current page number
 
   return (
     <main>

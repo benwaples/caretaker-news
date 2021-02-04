@@ -6,7 +6,9 @@ export function getArticles(search: string, page: number): Promise<Response> {
   )
     .then((res) => res.json())
     .then((json) => json.response)
-    .catch(() => new Error(`failed to fetch articles about ${search}`));
+    .catch(() => {
+      throw new Error(`failed to fetch articles about ${search}`);
+    });
 }
 
 export default getArticles;
