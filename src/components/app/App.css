@@ -4,4 +4,6 @@ body {
   --color3: #faedcaff;
   --color4: #c1dbb3ff;
   --color5: #7ebc89ff;
+
+  font-family: monospace;
 }
