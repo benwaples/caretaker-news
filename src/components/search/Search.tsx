@@ -2,15 +2,13 @@ import React from 'react';
 
 export default function Search({
   query,
-  handleChange,
-  handleSubmit,
+  handleQuery,
 }: {
   query: string;
-  handleChange: (e: {
+  handleQuery: (e: {
     preventDefault: () => void;
     target: { value: React.SetStateAction<string> };
   }) => void;
-  handleSubmit: () => void;
 }): JSX.Element {
   return (
     <div>
@@ -21,12 +19,9 @@ export default function Search({
           type="search"
           name="search"
           value={query}
-          onChange={handleChange}
+          onChange={handleQuery}
         />
       </label>
-      <button onClick={() => handleSubmit()} type="button">
-        Submit
-      </button>
     </div>
   );
 }
