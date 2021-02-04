@@ -18,7 +18,7 @@ export default function Article({
 
   return (
     <li className="article">
-      <h1>{article.webTitle}</h1>
+      <h3>{article.webTitle}</h3>
       <img src={src} alt={article.webTitle} onError={() => setSrc(notFound)} />
       <a href={article.webUrl}>Go to article</a>
     </li>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Article as ArticleType } from '../../types';
 import Article from './Article';
+import './articleList.scss';
 
 export default function ArticleList({
   articles,
@@ -11,5 +12,5 @@ export default function ArticleList({
     <Article key={article.id} article={article} />
   ));
 
-  return <ul>{articleElements}</ul>;
+  return <ul id="article-list">{articleElements}</ul>;
 }
