@@ -1,4 +1,4 @@
-export interface Results {
+export interface Response {
   totalArticles: number;
   pageSize: number;
   currentPage: number;

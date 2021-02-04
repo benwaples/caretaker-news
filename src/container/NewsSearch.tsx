@@ -4,13 +4,13 @@ import PageNav from '../components/page/PageNav';
 import Search from '../components/search/Search';
 // eslint-disable-next-line import/no-named-as-default
 import getArticles from '../services/guardianApi';
-import { Results } from '../types';
+import { Response } from '../types';
 
 export default function NewsSearch(): JSX.Element {
   const [query, setQuery] = useState('Sports');
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [response, setResponse] = useState<Results>();
+  const [response, setResponse] = useState<Response>();
 
   const handleQuery = (e: {
     preventDefault: () => void;
