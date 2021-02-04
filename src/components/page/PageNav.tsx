@@ -11,7 +11,7 @@ export default function PageNav({
     <div>
       <button
         type="button"
-        disabled={page <= 0}
+        disabled={page <= 1}
         onClick={() => setPage(page - 1)}
       >
         Prev
