@@ -3,9 +3,11 @@ import React from 'react';
 export default function PageNav({
   setPage,
   page,
+  totalPages,
 }: {
   setPage: (page: number) => void;
   page: number;
+  totalPages: number | undefined;
 }): JSX.Element {
   return (
     <div>
@@ -19,6 +21,9 @@ export default function PageNav({
       <button type="button" onClick={() => setPage(page + 1)}>
         Next
       </button>
+      <h3>
+        {page}/{totalPages}
+      </h3>
     </div>
   );
 }
