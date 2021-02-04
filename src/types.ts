@@ -15,7 +15,12 @@ export interface Article {
   webTitle: string;
   webUrl: string;
   apiUrl: string;
+  fields: Fields;
   isHosted: boolean;
   pillarId: string;
   pillarName: string;
+}
+
+export interface Fields {
+  thumbnail: string;
 }
