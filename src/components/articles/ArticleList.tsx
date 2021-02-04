@@ -8,7 +8,7 @@ export default function ArticleList({
   articles: ArticleType[];
 }): JSX.Element {
   const articleElements = articles.map((article: ArticleType) => (
-    <Article article={article} />
+    <Article key={article.id} article={article} />
   ));
 
   return <ul>{articleElements}</ul>;
