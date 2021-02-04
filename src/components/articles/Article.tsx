@@ -20,7 +20,9 @@ export default function Article({
     <li className="article">
       <h3>{article.webTitle}</h3>
       <img src={src} alt={article.webTitle} onError={() => setSrc(notFound)} />
-      <a href={article.webUrl}>Go to article</a>
+      <a href={article.webUrl} target="_blank" rel="noreferrer">
+        Go to article
+      </a>
     </li>
   );
 }
