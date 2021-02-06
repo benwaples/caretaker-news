@@ -1,16 +1,18 @@
 import React from 'react';
-import './App.css';
 import * as dotenv from 'dotenv';
+import './App.css';
+
+import NewsSearch from '../../container/NewsSearch';
+
+import Header from '../header/Header';
 
 dotenv.config();
 
 function App(): JSX.Element {
-  console.log(process.env.REACT_APP_GUARDIAN_KEY);
   return (
     <div className="App">
-      <header className="App-header">
-        <h3>Hello World</h3>
-      </header>
+      <Header />
+      <NewsSearch />
     </div>
   );
 }

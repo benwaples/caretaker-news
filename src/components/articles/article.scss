@@ -1,0 +1,22 @@
+@use '../app/App.css';
+
+.article {
+  background-color: var(--color4);
+  margin: 10px;
+  padding: 8px;
+  width: 400px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  img {
+    width: 100%;
+  }
+
+  a {
+    align-self: flex-end;
+  }
+
+}
